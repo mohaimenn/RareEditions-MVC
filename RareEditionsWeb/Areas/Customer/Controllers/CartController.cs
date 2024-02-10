@@ -130,7 +130,7 @@ namespace RareEditionsWeb.Areas.Customer.Controllers
             {
                 //customer
                 //stripe logica
-                var domain = "https://localhost:7088/";
+                var domain = Request.Scheme+ "://" + Request.Host.Value +"/";
                 var options = new SessionCreateOptions
                 {
                     SuccessUrl = domain+ $"customer/cart/OrderConfirmation?id={ShoppingCartVM.OrderHeader.Id}",
